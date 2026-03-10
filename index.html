@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shaqiri Bouwbedrijf — professioneel stucwerk, schilderwerk, tegelwerk en timmerwerk. U betaalt pas als u 100% tevreden bent. Bel: 06 40 78 19 31">
+<title>Shaqiri Bouwbedrijf | Stucwerk · Schilderwerk · Tegelwerk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════
+   TOKENS
+═══════════════════════════════════════ */
+:root {
+  --c-bg:       #F7F5F0;
+  --c-bg2:      #EFECE5;
+  --c-dark:     #1A1714;
+  --c-dark2:    #2E2A26;
+  --c-mid:      #6B6560;
+  --c-accent:   #B8893A;
+  --c-accent2:  #D4A85A;
+  --c-white:    #FDFCFA;
+  --c-border:   #E0DAD0;
+  --c-shadow:   rgba(26,23,20,0.08);
+
+  --f-display:  'DM Serif Display', serif;
+  --f-heading:  'Syne', sans-serif;
+  --f-body:     'DM Sans', sans-serif;
+
+  --r-sm: 6px;
+  --r-md: 12px;
+  --r-lg: 20px;
+
+  --nav-h: 72px;
+  --max-w: 1160px;
+}
+
+/* ═══════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════ */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
+body { background:var(--c-bg); color:var(--c-dark); font-family:var(--f-body); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+img { display:block; max-width:100%; }
+a { color:inherit; text-decoration:none; }
+button { font-family:var(--f-body); cursor:pointer; border:none; }
+
+/* ═══════════════════════════════════════
+   UTILITIES
+═══════════════════════════════════════ */
+.container { max-width:var(--max-w); margin:0 auto; padding:0 40px; }
+.tag { display:inline-flex; align-items:center; gap:8px; font-family:var(--f-body); font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--c-accent); margin-bottom:14px; }
+.tag::before { content:''; width:24px; height:2px; background:var(--c-accent); border-radius:2px; }
+.visually-hidden { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
+
+/* Buttons */
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; font-family:var(--f-body); font-size:14px; font-weight:600; letter-spacing:0.5px; padding:14px 28px; border-radius:var(--r-sm); transition:all 0.25s ease; cursor:pointer; }
+.btn-primary { background:var(--c-accent); color:#fff; border:2px solid var(--c-accent); }
+.btn-primary:hover { background:var(--c-accent2); border-color:var(--c-accent2); transform:translateY(-2px); box-shadow:0 8px 24px rgba(184,137,58,0.3); }
+.btn-outline { background:transparent; color:var(--c-dark); border:2px solid var(--c-border); }
+.btn-outline:hover { border-color:var(--c-accent); color:var(--c-accent); transform:translateY(-2px); }
+.btn-white { background:#fff; color:var(--c-dark); border:2px solid #fff; }
+.btn-white:hover { background:var(--c-bg); transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.12); }
+.btn-lg { padding:17px 36px; font-size:15px; border-radius:var(--r-sm); }
+
+/* Scroll-reveal */
+.reveal { opacity:0; transform:translateY(28px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:none; }
+
+/* ═══════════════════════════════════════
+   NAV
+═══════════════════════════════════════ */
+#nav {
+  position:fixed; top:0; left:0; right:0; z-index:900;
+  height:var(--nav-h);
+  display:flex; align-items:center;
+  padding:0 40px;
+  transition:background 0.3s, box-shadow 0.3s;
+}
+#nav.solid {
+  background:var(--c-white);
+  box-shadow:0 1px 0 var(--c-border), 0 4px 24px var(--c-shadow);
+}
+.nav-inner { width:100%; max-width:var(--max-w); margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.nav-logo { display:flex; flex-direction:column; line-height:1; }
+.nav-logo-top { font-family:var(--f-heading); font-size:17px; font-weight:800; color:var(--c-dark); letter-spacing:-0.3px; }
+.nav-logo-sub { font-size:10px; font-weight:500; letter-spacing:2.5px; color:var(--c-accent); text-transform:uppercase; }
+.nav-links { display:flex; align-items:center; gap:8px; list-style:none; }
+.nav-links a { font-size:13px; font-weight:500; color:var(--c-mid); padding:8px 14px; border-radius:var(--r-sm); transition:all 0.2s; }
+.nav-links a:hover { color:var(--c-dark); background:var(--c-bg2); }
+.nav-links a.active { color:var(--c-accent); }
+.nav-right { display:flex; align-items:center; gap:10px; }
+.nav-phone { display:flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:var(--c-dark); padding:8px 16px; border-radius:var(--r-sm); border:1.5px solid var(--c-border); transition:all 0.2s; }
+.nav-phone:hover { border-color:var(--c-accent); color:var(--c-accent); }
+.nav-cta { background:var(--c-accent); color:#fff; font-size:13px; font-weight:600; padding:10px 20px; border-radius:var(--r-sm); transition:all 0.2s; }
+.nav-cta:hover { background:var(--c-accent2); transform:translateY(-1px); box-shadow:0 6px 20px rgba(184,137,58,0.3); }
+
+/* Mobile hamburger */
+.hamburger { display:none; flex-direction:column; gap:5px; padding:8px; background:none; border:none; cursor:pointer; }
+.hamburger span { display:block; width:22px; height:2px; background:var(--c-dark); border-radius:2px; transition:all 0.3s; }
+.hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity:0; }
+.hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  display:none; position:fixed; top:var(--nav-h); left:0; right:0; bottom:0;
+  background:var(--c-white); z-index:899; padding:32px 24px;
+  flex-direction:column; gap:8px;
+  border-top:1px solid var(--c-border);
+}
+.mobile-menu.open { display:flex; }
+.mobile-menu a { font-size:18px; font-weight:600; color:var(--c-dark); padding:14px 0; border-bottom:1px solid var(--c-border); }
+.mobile-menu a:last-child { border-bottom:none; }
+.mobile-cta { margin-top:16px; background:var(--c-accent); color:#fff !important; text-align:center; border-radius:var(--r-sm); border:none !important; }
+
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+.hero {
+  position:relative;
+  min-height:100vh;
+  display:flex; align-items:center;
+  overflow:hidden;
+  background:var(--c-dark);
+  padding-top:var(--nav-h);
+}
+.hero-bg {
+  position:absolute; inset:0;
+  background:url('https://primary.jwwb.nl/public/y/l/m/temp-wysglyhklvwgeopqrzvo/IMG_7704-1.jpg') center/cover no-repeat;
+  animation:heroZoom 16s ease-in-out infinite alternate;
+}
+@keyframes heroZoom { 0%{transform:scale(1)} 100%{transform:scale(1.06)} }
+.hero-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(105deg, rgba(26,23,20,0.82) 0%, rgba(26,23,20,0.55) 55%, rgba(26,23,20,0.2) 100%);
+}
+.hero-content {
+  position:relative; z-index:2;
+  max-width:var(--max-w); margin:0 auto; padding:80px 40px;
+  display:grid; grid-template-columns:1fr 380px; gap:60px; align-items:center;
+}
+.hero-left {}
+.hero-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(184,137,58,0.2); border:1px solid rgba(184,137,58,0.4);
+  color:var(--c-accent2); font-size:11px; font-weight:600; letter-spacing:2.5px;
+  text-transform:uppercase; padding:6px 16px; border-radius:40px; margin-bottom:24px;
+  animation:fadeIn 0.8s ease both;
+}
+.hero-title {
+  font-family:var(--f-display); font-size:clamp(44px,6.5vw,84px); font-weight:400;
+  line-height:1.05; color:#fff; margin-bottom:20px;
+  animation:slideUp 0.9s ease 0.15s both;
+}
+.hero-title em { font-style:italic; color:var(--c-accent2); }
+.hero-lead {
+  font-size:17px; font-weight:300; color:rgba(255,255,255,0.72);
+  max-width:500px; line-height:1.8; margin-bottom:40px;
+  animation:slideUp 0.9s ease 0.3s both;
+}
+.hero-actions { display:flex; gap:12px; flex-wrap:wrap; animation:slideUp 0.9s ease 0.45s both; }
+.hero-trust { display:flex; align-items:center; gap:16px; margin-top:32px; animation:slideUp 0.9s ease 0.6s both; }
+.trust-stars { display:flex; gap:2px; }
+.trust-stars span { font-size:16px; }
+.trust-text { font-size:13px; color:rgba(255,255,255,0.55); }
+.trust-text strong { color:rgba(255,255,255,0.85); display:block; }
+
+/* Hero card */
+.hero-card {
+  background:var(--c-white); border-radius:var(--r-lg);
+  padding:32px 28px; animation:slideUp 0.9s ease 0.5s both;
+  box-shadow:0 24px 80px rgba(0,0,0,0.35);
+}
+.hero-card-title { font-family:var(--f-heading); font-size:18px; font-weight:700; color:var(--c-dark); margin-bottom:4px; }
+.hero-card-sub { font-size:13px; color:var(--c-mid); margin-bottom:24px; }
+.quick-contact { display:flex; flex-direction:column; gap:12px; }
+.qc-item {
+  display:flex; align-items:center; gap:14px;
+  padding:14px 16px; border-radius:var(--r-sm);
+  border:1.5px solid var(--c-border); text-decoration:none;
+  color:var(--c-dark); transition:all 0.2s; background:var(--c-bg);
+}
+.qc-item:hover { border-color:var(--c-accent); background:#fff; transform:translateX(3px); }
+.qc-icon { width:36px; height:36px; border-radius:var(--r-sm); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+.qc-icon.green { background:#E8F5E9; }
+.qc-icon.blue { background:#E3F2FD; }
+.qc-icon.orange { background:#FFF3E0; }
+.qc-label { font-size:11px; font-weight:500; color:var(--c-mid); letter-spacing:0.5px; display:block; }
+.qc-value { font-size:14px; font-weight:600; color:var(--c-dark); display:block; }
+.hero-card-divider { height:1px; background:var(--c-border); margin:20px 0; }
+.usp-list { display:flex; flex-direction:column; gap:10px; }
+.usp-item { display:flex; align-items:center; gap:10px; font-size:13px; color:var(--c-mid); }
+.usp-check { width:20px; height:20px; background:#E8F5E9; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; flex-shrink:0; }
+
+/* Scroll cue */
+.hero-scroll-cue {
+  position:absolute; bottom:36px; left:50%; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:8px; z-index:2;
+  color:rgba(255,255,255,0.4); font-size:10px; letter-spacing:2.5px; text-transform:uppercase;
+}
+.scroll-dot { width:6px; height:6px; background:var(--c-accent); border-radius:50%; animation:scrollBounce 2s ease-in-out infinite; }
+@keyframes scrollBounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+
+/* ═══════════════════════════════════════
+   TRUST BAR
+═══════════════════════════════════════ */
+.trust-bar { background:var(--c-dark); padding:0; }
+.trust-bar-inner {
+  max-width:var(--max-w); margin:0 auto;
+  display:grid; grid-template-columns:repeat(4,1fr);
+  border-left:1px solid rgba(255,255,255,0.07);
+}
+.trust-item {
+  padding:36px 32px; border-right:1px solid rgba(255,255,255,0.07);
+  text-align:center;
+}
+.trust-num { font-family:var(--f-heading); font-size:52px; font-weight:800; color:var(--c-accent2); line-height:1; display:block; margin-bottom:4px; }
+.trust-label { font-size:11px; font-weight:500; letter-spacing:2px; color:rgba(255,255,255,0.45); text-transform:uppercase; }
+
+/* ═══════════════════════════════════════
+   SERVICES
+═══════════════════════════════════════ */
+.services-sec { padding:100px 0; background:var(--c-bg); }
+.section-head { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:56px; flex-wrap:wrap; gap:20px; }
+.section-title { font-family:var(--f-display); font-size:clamp(32px,4.5vw,54px); font-weight:400; line-height:1.1; }
+.section-title em { font-style:italic; color:var(--c-accent); }
+.section-lead { font-size:15px; color:var(--c-mid); max-width:420px; line-height:1.7; }
+
+.services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+.service-card {
+  background:var(--c-white); padding:40px 36px;
+  border:1.5px solid transparent; transition:all 0.3s; position:relative; overflow:hidden;
+}
+.service-card::before {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg, var(--c-accent), var(--c-accent2));
+  transform:scaleX(0); transform-origin:left; transition:transform 0.35s ease;
+}
+.service-card:hover { border-color:var(--c-border); transform:translateY(-4px); box-shadow:0 16px 48px var(--c-shadow); }
+.service-card:hover::before { transform:scaleX(1); }
+.svc-num { font-family:var(--f-heading); font-size:11px; font-weight:700; letter-spacing:2px; color:var(--c-accent); display:block; margin-bottom:20px; }
+.svc-icon-wrap { width:52px; height:52px; background:var(--c-bg2); border-radius:var(--r-md); display:flex; align-items:center; justify-content:center; font-size:26px; margin-bottom:20px; transition:background 0.3s; }
+.service-card:hover .svc-icon-wrap { background:rgba(184,137,58,0.12); }
+.svc-name { font-family:var(--f-heading); font-size:20px; font-weight:700; color:var(--c-dark); margin-bottom:10px; }
+.svc-desc { font-size:14px; color:var(--c-mid); line-height:1.75; }
+
+/* ═══════════════════════════════════════
+   GALLERY / PROJECTS
+═══════════════════════════════════════ */
+.gallery-sec { padding:100px 0; background:var(--c-bg2); }
+.gallery-grid {
+  display:grid;
+  grid-template-columns:1.2fr 1fr 1fr;
+  grid-template-rows:320px 260px;
+  gap:4px; margin-top:60px;
+}
+.g-item { position:relative; overflow:hidden; border-radius:0; background:var(--c-bg); }
+.g-item:first-child { grid-row:span 2; border-radius:var(--r-md) 0 0 var(--r-md); }
+.g-item:nth-child(3) { border-radius:0 var(--r-md) 0 0; }
+.g-item:nth-child(4) { border-radius:0 0 0 0; }
+.g-item:last-child { border-radius:0 0 var(--r-md) 0; }
+.g-item img { width:100%; height:100%; object-fit:cover; transition:transform 0.6s ease; }
+.g-item:hover img { transform:scale(1.06); }
+.g-item-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(26,23,20,0.65) 0%, transparent 55%);
+  opacity:0; transition:opacity 0.35s;
+  display:flex; align-items:flex-end; padding:20px;
+}
+.g-item:hover .g-item-overlay { opacity:1; }
+.g-tag { font-size:12px; font-weight:600; letter-spacing:1.5px; color:var(--c-accent2); text-transform:uppercase; }
+.gallery-cta { text-align:center; margin-top:40px; }
+
+/* ═══════════════════════════════════════
+   WHY US / USP SPLIT
+═══════════════════════════════════════ */
+.why-sec {
+  display:grid; grid-template-columns:1fr 1fr;
+  min-height:560px; overflow:hidden;
+}
+.why-img-col { position:relative; min-height:560px; }
+.why-img-col img { width:100%; height:100%; object-fit:cover; display:block; }
+.why-img-col::after {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(to right, transparent 70%, var(--c-bg2) 100%);
+}
+.why-text-col {
+  background:var(--c-bg2); padding:80px 72px;
+  display:flex; flex-direction:column; justify-content:center;
+}
+.blockquote {
+  background:var(--c-white); border-left:4px solid var(--c-accent);
+  padding:20px 24px; border-radius:0 var(--r-sm) var(--r-sm) 0;
+  margin:24px 0 32px;
+}
+.blockquote p { font-family:var(--f-display); font-size:17px; font-style:italic; color:var(--c-dark); line-height:1.6; }
+.blockquote cite { display:block; margin-top:10px; font-size:12px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--c-accent); font-style:normal; }
+.feat-list { display:flex; flex-direction:column; gap:0; }
+.feat-item { display:flex; align-items:flex-start; gap:16px; padding:16px 0; border-bottom:1px solid var(--c-border); }
+.feat-item:last-child { border-bottom:none; }
+.feat-ico { width:40px; height:40px; background:var(--c-white); border-radius:var(--r-sm); display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; box-shadow:0 2px 8px var(--c-shadow); }
+.feat-body strong { display:block; font-size:14px; font-weight:600; color:var(--c-dark); margin-bottom:2px; }
+.feat-body span { font-size:13px; color:var(--c-mid); line-height:1.5; }
+
+/* ═══════════════════════════════════════
+   REVIEWS / SOCIAL PROOF
+═══════════════════════════════════════ */
+.reviews-sec { padding:100px 0; background:var(--c-bg); }
+.reviews-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:56px; }
+.review-card {
+  background:var(--c-white); padding:28px; border-radius:var(--r-md);
+  border:1.5px solid var(--c-border); transition:all 0.3s;
+}
+.review-card:hover { transform:translateY(-3px); box-shadow:0 12px 36px var(--c-shadow); border-color:rgba(184,137,58,0.2); }
+.review-stars { display:flex; gap:2px; margin-bottom:14px; font-size:16px; }
+.review-text { font-size:14px; color:var(--c-dark2); line-height:1.75; margin-bottom:20px; }
+.review-author { display:flex; align-items:center; gap:12px; }
+.review-avatar { width:40px; height:40px; border-radius:50%; background:var(--c-bg2); display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0; }
+.review-name { font-size:14px; font-weight:600; color:var(--c-dark); display:block; }
+.review-date { font-size:12px; color:var(--c-mid); }
+.review-platform { display:flex; align-items:center; justify-content:center; gap:10px; margin-top:48px; }
+.review-platform a { display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:600; color:var(--c-accent); padding:10px 20px; border:1.5px solid var(--c-accent); border-radius:var(--r-sm); transition:all 0.2s; }
+.review-platform a:hover { background:var(--c-accent); color:#fff; }
+
+/* ═══════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════ */
+.contact-sec { padding:100px 0; background:var(--c-bg2); }
+.contact-grid { display:grid; grid-template-columns:1fr 1.1fr; gap:60px; margin-top:56px; align-items:start; }
+
+/* Contact info */
+.contact-info h3 { font-family:var(--f-display); font-size:28px; margin-bottom:10px; }
+.contact-info p { font-size:14px; color:var(--c-mid); line-height:1.8; margin-bottom:32px; }
+.contact-links { display:flex; flex-direction:column; gap:12px; }
+.clink {
+  display:flex; align-items:center; gap:16px;
+  padding:16px 20px; background:var(--c-white); border-radius:var(--r-md);
+  border:1.5px solid var(--c-border); text-decoration:none; color:var(--c-dark);
+  transition:all 0.2s;
+}
+.clink:hover { border-color:var(--c-accent); transform:translateX(4px); }
+.clink-icon { width:44px; height:44px; border-radius:var(--r-sm); display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; }
+.clink-icon.g { background:#E8F5E9; }
+.clink-icon.b { background:#E3F2FD; }
+.clink-icon.o { background:#FFF3E0; }
+.clink-icon.r { background:#FCE4EC; }
+.clink-label { font-size:11px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--c-mid); display:block; }
+.clink-val { font-size:15px; font-weight:600; color:var(--c-dark); display:block; }
+.clink-sub { font-size:12px; color:var(--c-mid); }
+
+/* Offerte form */
+.offerte-form { background:var(--c-white); border-radius:var(--r-lg); padding:40px 36px; border:1.5px solid var(--c-border); box-shadow:0 8px 40px var(--c-shadow); }
+.form-title { font-family:var(--f-heading); font-size:22px; font-weight:700; color:var(--c-dark); margin-bottom:6px; }
+.form-sub { font-size:13px; color:var(--c-mid); margin-bottom:28px; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.form-group { display:flex; flex-direction:column; gap:6px; margin-bottom:14px; }
+.form-group label { font-size:12px; font-weight:600; color:var(--c-dark); letter-spacing:0.5px; }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding:12px 14px; border:1.5px solid var(--c-border); border-radius:var(--r-sm);
+  font-family:var(--f-body); font-size:14px; color:var(--c-dark); background:var(--c-bg);
+  transition:border-color 0.2s, box-shadow 0.2s; outline:none; width:100%;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color:var(--c-accent); box-shadow:0 0 0 3px rgba(184,137,58,0.12); background:#fff; }
+.form-group textarea { resize:vertical; min-height:96px; }
+.form-notice { font-size:12px; color:var(--c-mid); margin-top:8px; display:flex; align-items:center; gap:6px; }
+.form-success { display:none; text-align:center; padding:24px; }
+.form-success-icon { font-size:48px; margin-bottom:12px; }
+.form-success h4 { font-family:var(--f-heading); font-size:20px; font-weight:700; margin-bottom:6px; }
+.form-success p { font-size:14px; color:var(--c-mid); }
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer {
+  background:var(--c-dark);
+  padding:64px 0 0;
+}
+.footer-inner {
+  max-width:var(--max-w); margin:0 auto; padding:0 40px;
+  display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:60px;
+  padding-bottom:56px; border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.footer-brand {}
+.footer-logo { font-family:var(--f-display); font-size:26px; color:#fff; margin-bottom:12px; }
+.footer-logo span { color:var(--c-accent2); }
+.footer-desc { font-size:14px; color:rgba(255,255,255,0.45); line-height:1.8; max-width:280px; margin-bottom:24px; }
+.footer-social { display:flex; gap:10px; }
+.social-btn { width:40px; height:40px; border-radius:var(--r-sm); background:rgba(255,255,255,0.07); display:flex; align-items:center; justify-content:center; font-size:18px; transition:background 0.2s; }
+.social-btn:hover { background:rgba(184,137,58,0.3); }
+.footer-col h4 { font-family:var(--f-heading); font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:20px; }
+.footer-links { display:flex; flex-direction:column; gap:10px; list-style:none; }
+.footer-links a { font-size:14px; color:rgba(255,255,255,0.55); transition:color 0.2s; }
+.footer-links a:hover { color:var(--c-accent2); }
+.footer-bottom {
+  max-width:var(--max-w); margin:0 auto; padding:20px 40px;
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+}
+.footer-bottom p { font-size:12px; color:rgba(255,255,255,0.25); }
+
+/* ═══════════════════════════════════════
+   STICKY CTA BAR (mobile)
+═══════════════════════════════════════ */
+.sticky-cta {
+  display:none; position:fixed; bottom:0; left:0; right:0; z-index:800;
+  background:var(--c-white); border-top:1px solid var(--c-border);
+  padding:12px 16px; gap:10px;
+  box-shadow:0 -4px 24px rgba(0,0,0,0.12);
+}
+.sticky-cta a { flex:1; display:flex; align-items:center; justify-content:center; gap:6px; padding:12px; border-radius:var(--r-sm); font-size:13px; font-weight:600; }
+.sticky-cta .s-call { background:var(--c-accent); color:#fff; }
+.sticky-cta .s-wa { background:#25D366; color:#fff; }
+
+/* ═══════════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════════ */
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+@keyframes slideUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media(max-width:1024px){
+  .hero-content { grid-template-columns:1fr; }
+  .hero-card { max-width:440px; }
+  .why-sec { grid-template-columns:1fr; }
+  .why-img-col { min-height:340px; }
+  .why-text-col { padding:60px 40px; }
+  .contact-grid { grid-template-columns:1fr; }
+  .footer-inner { grid-template-columns:1fr 1fr; }
+}
+@media(max-width:768px){
+  :root { --nav-h:60px; }
+  .container { padding:0 20px; }
+  #nav { padding:0 20px; }
+  .nav-links, .nav-phone { display:none; }
+  .hamburger { display:flex; }
+  .hero-content { padding:60px 20px; }
+  .hero-lead { font-size:15px; }
+  .hero-actions { flex-direction:column; }
+  .hero-actions .btn { width:100%; justify-content:center; }
+  .trust-bar-inner { grid-template-columns:repeat(2,1fr); }
+  .services-grid { grid-template-columns:1fr 1fr; }
+  .gallery-grid { grid-template-columns:1fr; grid-template-rows:auto; }
+  .g-item:first-child { grid-row:span 1; border-radius:var(--r-md) var(--r-md) 0 0; }
+  .g-item img { height:220px; }
+  .g-item:last-child { border-radius:0 0 var(--r-md) var(--r-md); }
+  .reviews-grid { grid-template-columns:1fr; }
+  .form-row { grid-template-columns:1fr; }
+  .offerte-form { padding:28px 22px; }
+  .footer-inner { grid-template-columns:1fr; gap:36px; }
+  .sticky-cta { display:flex; }
+  body { padding-bottom:70px; }
+  .section-head { flex-direction:column; align-items:flex-start; }
+  .why-text-col { padding:56px 24px; }
+}
+@media(max-width:480px){
+  .services-grid { grid-template-columns:1fr; }
+  .trust-bar-inner { grid-template-columns:1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav id="nav" role="navigation" aria-label="Hoofdnavigatie">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" aria-label="Shaqiri Bouwbedrijf - home">
+      <span class="nav-logo-top">Shaqiri Bouwbedrijf</span>
+      <span class="nav-logo-sub">Stucwerk & Afbouw</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#diensten">Diensten</a></li>
+      <li><a href="#projecten">Projecten</a></li>
+      <li><a href="#over-ons">Over Ons</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:+31640781931" class="nav-phone" aria-label="Bel ons">
+        <span>📞</span> 06 40 78 19 31
+      </a>
+      <a href="#contact" class="nav-cta">Gratis Offerte</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobiel menu">
+  <a href="#diensten" onclick="closeMobile()">Diensten</a>
+  <a href="#projecten" onclick="closeMobile()">Projecten</a>
+  <a href="#over-ons" onclick="closeMobile()">Over Ons</a>
+  <a href="#reviews" onclick="closeMobile()">Reviews</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="#contact" class="mobile-cta" onclick="closeMobile()">✉️ Gratis Offerte Aanvragen</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" aria-label="Welkom bij Shaqiri Bouwbedrijf">
+  <div class="hero-bg" role="img" aria-label="Vakmanschap aan het werk"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">⭐ KvK 67993710 · Opgericht 2019</div>
+      <h1 class="hero-title">Vakmanschap<br>dat <em>spreekt</em><br>voor zich.</h1>
+      <p class="hero-lead">Stucwerk, schilderwerk, tegelwerk en meer — uitgevoerd met duurzame materialen en echt oog voor detail.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary btn-lg">✉️ Gratis offerte aanvragen</a>
+        <a href="tel:+31640781931" class="btn btn-white btn-lg">📞 Direct bellen</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-stars" aria-label="4 van de 5 sterren">
+          <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>🌟</span>
+        </div>
+        <div class="trust-text">
+          <strong>230+ beoordelingen</strong>
+          Tevreden klanten door heel Nederland
+        </div>
+      </div>
+    </div>
+    <div class="hero-card" role="complementary" aria-label="Direct contact">
+      <div class="hero-card-title">Direct contact opnemen</div>
+      <div class="hero-card-sub">Wij reageren binnen 2 uur op werkdagen</div>
+      <div class="quick-contact">
+        <a href="tel:+31640781931" class="qc-item" aria-label="Bel ons: 06 40 78 19 31">
+          <div class="qc-icon green">📞</div>
+          <div>
+            <span class="qc-label">Bellen</span>
+            <span class="qc-value">06 40 78 19 31</span>
+          </div>
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=31640781931" class="qc-item" aria-label="WhatsApp ons" target="_blank" rel="noopener">
+          <div class="qc-icon green">💬</div>
+          <div>
+            <span class="qc-label">WhatsApp</span>
+            <span class="qc-value">Stuur direct een bericht</span>
+          </div>
+        </a>
+        <a href="mailto:info@shaqiribouwbedrijf.nl" class="qc-item" aria-label="E-mail ons">
+          <div class="qc-icon blue">📧</div>
+          <div>
+            <span class="qc-label">E-mail</span>
+            <span class="qc-value">info@shaqiribouwbedrijf.nl</span>
+          </div>
+        </a>
+      </div>
+      <div class="hero-card-divider"></div>
+      <div class="usp-list">
+        <div class="usp-item"><div class="usp-check">✓</div> U betaalt pas als u 100% tevreden bent</div>
+        <div class="usp-item"><div class="usp-check">✓</div> Gratis offerte, geen verplichtingen</div>
+        <div class="usp-item"><div class="usp-check">✓</div> Garantie op al het uitgevoerde werk</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll-cue" aria-hidden="true">
+    <div class="scroll-dot"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ═══ TRUST BAR ═══ -->
+<div class="trust-bar" aria-label="Onze resultaten in cijfers">
+  <div class="trust-bar-inner">
+    <div class="trust-item reveal">
+      <span class="trust-num" data-to="6">0</span>
+      <span class="trust-label">Jaar Ervaring</span>
+    </div>
+    <div class="trust-item reveal">
+      <span class="trust-num" data-to="500">0</span>
+      <span class="trust-label">Projecten Afgerond</span>
+    </div>
+    <div class="trust-item reveal">
+      <span class="trust-num" data-to="230">0</span>
+      <span class="trust-label">Tevreden Klanten</span>
+    </div>
+    <div class="trust-item reveal">
+      <span class="trust-num" data-to="100">0</span>
+      <span class="trust-label">% Tevredenheids­garantie</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SERVICES ═══ -->
+<section id="diensten" class="services-sec" aria-labelledby="diensten-titel">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="tag reveal">Onze Diensten</div>
+        <h2 class="section-title reveal" id="diensten-titel">Wat kunnen wij<br><em>voor u doen?</em></h2>
+      </div>
+      <div>
+        <p class="section-lead reveal">Van stuc tot tegel, van schilder tot timmer — wij leveren vakwerk voor elk klus, groot of klein.</p>
+        <br>
+        <a href="#contact" class="btn btn-primary reveal">Offerte aanvragen →</a>
+      </div>
+    </div>
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <span class="svc-num">01</span>
+        <div class="svc-icon-wrap" aria-hidden="true">🏗️</div>
+        <h3 class="svc-name">Stucwerk</h3>
+        <p class="svc-desc">Binnen- en buitenstucwerk van topkwaliteit. Glad, strak en duurzaam afgewerkt door ervaren vaklieden die oog hebben voor elk detail.</p>
+      </article>
+      <article class="service-card reveal">
+        <span class="svc-num">02</span>
+        <div class="svc-icon-wrap" aria-hidden="true">🎨</div>
+        <h3 class="svc-name">Schilderwerk & Sauswerk</h3>
+        <p class="svc-desc">Professioneel schilder- en sauswerk binnen en buiten. Premium materialen voor een kleurresultaat dat jarenlang mooi en fris blijft.</p>
+      </article>
+      <article class="service-card reveal">
+        <span class="svc-num">03</span>
+        <div class="svc-icon-wrap" aria-hidden="true">✨</div>
+        <h3 class="svc-name">Sierpleister & Raapwerk</h3>
+        <p class="svc-desc">Decoratieve sierpleister (Spachtleputz) en raapwerk voor een unieke, luxueuze uitstraling aan elk wand- of geveloppervlak.</p>
+      </article>
+      <article class="service-card reveal">
+        <span class="svc-num">04</span>
+        <div class="svc-icon-wrap" aria-hidden="true">🧱</div>
+        <h3 class="svc-name">Tegelwerk</h3>
+        <p class="svc-desc">Badkamer, keuken of vloer — tegels worden gelegd met millimeterprecisie voor een strak en professioneel eindresultaat.</p>
+      </article>
+      <article class="service-card reveal">
+        <span class="svc-num">05</span>
+        <div class="svc-icon-wrap" aria-hidden="true">🪚</div>
+        <h3 class="svc-name">Timmerwerk</h3>
+        <p class="svc-desc">Van kozijnen tot maatwerk kasten en verlaagde plafonds met inbouwspots — vakkundig timmerwerk op maat voor elk project.</p>
+      </article>
+      <article class="service-card reveal">
+        <span class="svc-num">06</span>
+        <div class="svc-icon-wrap" aria-hidden="true">🏠</div>
+        <h3 class="svc-name">Uitbouwen</h3>
+        <p class="svc-desc">Meer woonruimte nodig? Wij realiseren uw uitbouw professioneel en efficiënt — van fundering tot afwerking met duurzame materialen.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section id="projecten" class="gallery-sec" aria-labelledby="projecten-titel">
+  <div class="container">
+    <div class="tag reveal">Ons Werk</div>
+    <h2 class="section-title reveal" id="projecten-titel">Recente <em>projecten</em></h2>
+    <p class="reveal" style="font-size:15px;color:var(--c-mid);max-width:500px;margin-top:8px">Kijk mee in ons portfolio — elk project afgeleverd met precisie en trots.</p>
+  </div>
+  <div style="max-width:var(--max-w);margin:0 auto;padding:0 40px">
+    <div class="gallery-grid">
+      <div class="g-item reveal">
+        <img src="https://primary.jwwb.nl/public/y/l/m/temp-wysglyhklvwgeopqrzvo/IMG_7704-1.jpg" alt="Stucwerkproject door Shaqiri Bouwbedrijf" loading="lazy">
+        <div class="g-item-overlay"><span class="g-tag">Stucwerk Project</span></div>
+      </div>
+      <div class="g-item reveal">
+        <img src="https://primary.jwwb.nl/public/y/l/m/temp-wysglyhklvwgeopqrzvo/fxq3x8/IMG_0294-2.jpg?enable-io=true&enable=upscale&crop=1.5774%3A1&width=800" alt="Schilderwerk project" loading="lazy">
+        <div class="g-item-overlay"><span class="g-tag">Schilderwerk</span></div>
+      </div>
+      <div class="g-item reveal">
+        <img src="https://primary.jwwb.nl/public/y/l/m/temp-wysglyhklvwgeopqrzvo/IMG_9096-1.jpg" alt="Afwerkingsproject" loading="lazy">
+        <div class="g-item-overlay"><span class="g-tag">Vakkundige Afwerking</span></div>
+      </div>
+      <div class="g-item reveal">
+        <img src="https://primary.jwwb.nl/public/y/l/m/temp-wysglyhklvwgeopqrzvo/IMG_8767-1.jpg" alt="Renovatieproject" loading="lazy">
+        <div class="g-item-overlay"><span class="g-tag">Renovatie</span></div>
+      </div>
+      <div class="g-item reveal" style="background:var(--c-dark2);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;padding:32px;border-radius:0 0 var(--r-md) 0;">
+        <span style="font-size:40px">📸</span>
+        <p style="font-size:11px;letter-spacing:2px;font-weight:600;color:var(--c-accent2);text-align:center;text-transform:uppercase">Meer projecten<br>op Instagram</p>
+        <a href="https://instagram.com/shaqiri_bouwbedrijf" target="_blank" rel="noopener" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.2);font-size:12px;padding:10px 20px;" onmouseover="this.style.color='var(--c-dark)'" onmouseout="this.style.color='#fff'">@shaqiri_bouwbedrijf</a>
+      </div>
+    </div>
+  </div>
+  <div class="container gallery-cta">
+    <a href="https://instagram.com/shaqiri_bouwbedrijf" target="_blank" rel="noopener" class="btn btn-outline">📸 Bekijk meer werk op Instagram</a>
+  </div>
+</section>
+
+<!-- ═══ WHY US ═══ -->
+<section id="over-ons" class="why-sec" aria-labelledby="over-ons-titel">
+  <div class="why-img-col">
+    <img src="https://primary.jwwb.nl/public/y/l/m/temp-wysglyhklvwgeopqrzvo/IMG_8767-1.jpg" alt="Shaqiri Bouwbedrijf aan het werk — precisie en vakmanschap" loading="lazy">
+  </div>
+  <div class="why-text-col">
+    <div class="tag reveal">Waarom Shaqiri</div>
+    <h2 class="section-title reveal" id="over-ons-titel">Kwaliteit die<br><em>blijft</em></h2>
+    <p class="reveal" style="font-size:14px;color:var(--c-mid);line-height:1.85;margin-top:12px">Wij zijn een vakbedrijf met passie voor het ambacht. Met oog voor detail, duurzame materialen en eerlijke prijzen zorgen wij dat uw project precies zo wordt als u het voor ogen heeft.</p>
+    <div class="blockquote reveal">
+      <p>"Bij Shaqiri Bouwbedrijf betaalt u pas als u 100% tevreden bent. Dat onderscheidt ons van andere bouw- en stukadoorsbedrijven."</p>
+      <cite>— Shaqiri Bouwbedrijf, KvK 67993710</cite>
+    </div>
+    <div class="feat-list reveal">
+      <div class="feat-item">
+        <div class="feat-ico">🛡️</div>
+        <div class="feat-body">
+          <strong>100% Tevredenheidsgarantie</strong>
+          <span>U betaalt pas nadat u het werk heeft goedgekeurd — geen risico, altijd zekerheid.</span>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-ico">📋</div>
+        <div class="feat-body">
+          <strong>Gratis & Vrijblijvende Offerte</strong>
+          <span>Wij komen langs, kijken mee en geven een eerlijk en transparant kostenplaatje.</span>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-ico">💎</div>
+        <div class="feat-body">
+          <strong>Duurzame Materialen</strong>
+          <span>Wij werken uitsluitend met kwalitatief hoogwaardige materialen voor een langdurig resultaat.</span>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-ico">⚡</div>
+        <div class="feat-body">
+          <strong>Nette & Tijdige Oplevering</strong>
+          <span>Op tijd klaar, schoon achtergelaten en altijd bereikbaar als er nog vragen zijn.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REVIEWS ═══ -->
+<section id="reviews" class="reviews-sec" aria-labelledby="reviews-titel">
+  <div class="container">
+    <div class="tag reveal">Klantbeoordelingen</div>
+    <h2 class="section-title reveal" id="reviews-titel">Wat onze klanten <em>zeggen</em></h2>
+    <div class="reviews-grid">
+      <article class="review-card reveal">
+        <div class="review-stars" aria-label="5 van 5 sterren">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"Fantastisch werk geleverd! Het stucwerk is prachtig afgewerkt en Shaqiri was altijd bereikbaar. Aanrader voor iedereen die op zoek is naar vakmanschap."</p>
+        <div class="review-author">
+          <div class="review-avatar">👤</div>
+          <div>
+            <span class="review-name">Ahmed B.</span>
+            <span class="review-date">Marktplaats · 2024</span>
+          </div>
+        </div>
+      </article>
+      <article class="review-card reveal">
+        <div class="review-stars" aria-label="5 van 5 sterren">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"Onze badkamer is compleet opnieuw betegeld. Alles tot in de puntjes verzorgd, netjes en snel. We zijn super tevreden over het resultaat!"</p>
+        <div class="review-author">
+          <div class="review-avatar">👤</div>
+          <div>
+            <span class="review-name">Sandra V.</span>
+            <span class="review-date">Marktplaats · 2024</span>
+          </div>
+        </div>
+      </article>
+      <article class="review-card reveal">
+        <div class="review-stars" aria-label="5 van 5 sterren">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"Professioneel, punctueel en eerlijk geprijsd. Het schilderwerk ziet er geweldig uit. Ze hebben werkelijk alles tot in de puntjes afgewerkt."</p>
+        <div class="review-author">
+          <div class="review-avatar">👤</div>
+          <div>
+            <span class="review-name">Mohamed E.</span>
+            <span class="review-date">Marktplaats · 2023</span>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="review-platform reveal">
+      <a href="https://www.marktplaats.nl/smb-profile/profile/24479740" target="_blank" rel="noopener" aria-label="Bekijk alle 230 beoordelingen op Marktplaats">
+        ⭐ Bekijk alle 230 beoordelingen op Marktplaats
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact" class="contact-sec" aria-labelledby="contact-titel">
+  <div class="container">
+    <div class="tag reveal">Contact & Offerte</div>
+    <h2 class="section-title reveal" id="contact-titel">Klaar om te <em>starten?</em></h2>
+    <div class="contact-grid">
+      <!-- Info -->
+      <div>
+        <div class="contact-info reveal">
+          <h3>Neem gerust contact op</h3>
+          <p>Bel ons, stuur een WhatsApp of vul het formulier in — wij reageren snel en komen graag langs voor een gratis, vrijblijvende offerte.</p>
+        </div>
+        <div class="contact-links reveal">
+          <a href="tel:+31640781931" class="clink" aria-label="Bel Shaqiri Bouwbedrijf">
+            <div class="clink-icon g">📞</div>
+            <div>
+              <span class="clink-label">Telefoon</span>
+              <span class="clink-val">06 40 78 19 31</span>
+              <span class="clink-sub">Ma–Za 8:00–19:00</span>
+            </div>
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=31640781931" class="clink" target="_blank" rel="noopener" aria-label="WhatsApp Shaqiri Bouwbedrijf">
+            <div class="clink-icon g">💬</div>
+            <div>
+              <span class="clink-label">WhatsApp</span>
+              <span class="clink-val">Stuur een bericht</span>
+              <span class="clink-sub">Reactie binnen 2 uur</span>
+            </div>
+          </a>
+          <a href="mailto:info@shaqiribouwbedrijf.nl" class="clink" aria-label="E-mail Shaqiri Bouwbedrijf">
+            <div class="clink-icon b">📧</div>
+            <div>
+              <span class="clink-label">E-mail</span>
+              <span class="clink-val">info@shaqiribouwbedrijf.nl</span>
+              <span class="clink-sub">Reactie binnen 1 werkdag</span>
+            </div>
+          </a>
+          <a href="https://instagram.com/shaqiri_bouwbedrijf" class="clink" target="_blank" rel="noopener" aria-label="Volg ons op Instagram">
+            <div class="clink-icon r">📸</div>
+            <div>
+              <span class="clink-label">Instagram</span>
+              <span class="clink-val">@shaqiri_bouwbedrijf</span>
+              <span class="clink-sub">Volg ons voor dagelijks werk</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- Form -->
+      <div class="reveal">
+        <div class="offerte-form" id="offerte-form">
+          <div id="form-content">
+            <div class="form-title">Gratis offerte aanvragen</div>
+            <div class="form-sub">Vul het formulier in en wij nemen binnen 24 uur contact op.</div>
+            <form id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="naam">Uw naam *</label>
+                  <input type="text" id="naam" name="naam" placeholder="Jan de Vries" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                  <label for="tel">Telefoonnummer *</label>
+                  <input type="tel" id="tel" name="tel" placeholder="06 12 34 56 78" required autocomplete="tel">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">E-mailadres</label>
+                <input type="email" id="email" name="email" placeholder="jan@email.nl" autocomplete="email">
+              </div>
+              <div class="form-group">
+                <label for="dienst">Welke dienst heeft u nodig?</label>
+                <select id="dienst" name="dienst">
+                  <option value="">— Selecteer een dienst —</option>
+                  <option>Stucwerk</option>
+                  <option>Schilderwerk / Sauswerk</option>
+                  <option>Sierpleister / Raapwerk</option>
+                  <option>Tegelwerk</option>
+                  <option>Timmerwerk</option>
+                  <option>Uitbouwen</option>
+                  <option>Meerdere diensten</option>
+                  <option>Nog niet zeker</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="bericht">Omschrijving van het werk</label>
+                <textarea id="bericht" name="bericht" placeholder="Beschrijf kort wat er gedaan moet worden, bijv. 'Woonkamer stucen, ca. 40m²'..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:16px" id="submit-btn">
+                Verstuur aanvraag →
+              </button>
+              <p class="form-notice">🔒 Uw gegevens worden alleen gebruikt om contact met u op te nemen.</p>
+            </form>
+          </div>
+          <div class="form-success" id="form-success">
+            <div class="form-success-icon">✅</div>
+            <h4>Aanvraag ontvangen!</h4>
+            <p>Bedankt voor uw aanvraag. Wij nemen zo snel mogelijk contact met u op — vaak al binnen een paar uur!</p>
+            <br>
+            <a href="https://api.whatsapp.com/send?phone=31640781931&text=Hallo%2C%20ik%20heb%20zojuist%20een%20offerte%20aangevraagd%20via%20uw%20website." target="_blank" class="btn btn-primary" style="margin:0 auto">💬 Stuur ook een WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Shaqiri <span>Bouwbedrijf</span></div>
+      <p class="footer-desc">Vakmanschap met passie. Stucwerk, schilderwerk, tegelwerk en meer — u betaalt pas als u tevreden bent.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/shaqiri_bouwbedrijf" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">📸</a>
+        <a href="https://api.whatsapp.com/send?phone=31640781931" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp">💬</a>
+        <a href="https://www.marktplaats.nl/smb-profile/profile/24479740" target="_blank" rel="noopener" class="social-btn" aria-label="Marktplaats">🏷️</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Diensten</h4>
+      <ul class="footer-links">
+        <li><a href="#diensten">Stucwerk</a></li>
+        <li><a href="#diensten">Schilderwerk & Sauswerk</a></li>
+        <li><a href="#diensten">Sierpleister & Raapwerk</a></li>
+        <li><a href="#diensten">Tegelwerk</a></li>
+        <li><a href="#diensten">Timmerwerk</a></li>
+        <li><a href="#diensten">Uitbouwen</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-links">
+        <li><a href="tel:+31640781931">📞 06 40 78 19 31</a></li>
+        <li><a href="mailto:info@shaqiribouwbedrijf.nl">📧 info@shaqiribouwbedrijf.nl</a></li>
+        <li><a href="https://api.whatsapp.com/send?phone=31640781931" target="_blank" rel="noopener">💬 WhatsApp</a></li>
+        <li><a href="https://instagram.com/shaqiri_bouwbedrijf" target="_blank" rel="noopener">📸 Instagram</a></li>
+        <li><a href="https://www.marktplaats.nl/smb-profile/profile/24479740" target="_blank" rel="noopener">⭐ Marktplaats reviews</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Shaqiri Bouwbedrijf — KvK: 67993710</p>
+    <p>Alle rechten voorbehouden</p>
+  </div>
+</footer>
+
+<!-- Mobile sticky CTA -->
+<div class="sticky-cta" aria-label="Snel contact opnemen">
+  <a href="tel:+31640781931" class="s-call">📞 Bellen</a>
+  <a href="https://api.whatsapp.com/send?phone=31640781931" class="s-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+</div>
+
+<script>
+// ── Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('solid', window.scrollY > 20);
+}, { passive: true });
+
+// ── Mobile menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  hamburger.classList.toggle('open', open);
+  hamburger.setAttribute('aria-expanded', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+function closeMobile() {
+  mobileMenu.classList.remove('open');
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+// ── Scroll reveal
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      const delay = e.target.dataset.delay || 0;
+      setTimeout(() => e.target.classList.add('visible'), delay * 100);
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach((el, i) => {
+  el.dataset.delay = i % 4;
+  revealObserver.observe(el);
+});
+
+// ── Counters
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    const target = parseInt(el.dataset.to);
+    const suffix = target === 100 ? '%' : '+';
+    let current = 0;
+    const increment = target / 55;
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) { current = target; clearInterval(timer); }
+      el.textContent = Math.floor(current) + suffix;
+    }, 22);
+    counterObserver.unobserve(el);
+  });
+}, { threshold: 0.6 });
+document.querySelectorAll('[data-to]').forEach(el => counterObserver.observe(el));
+
+// ── Form submit
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const naam = document.getElementById('naam').value.trim();
+  const tel = document.getElementById('tel').value.trim();
+  if (!naam || !tel) {
+    alert('Vul minimaal uw naam en telefoonnummer in.');
+    return;
+  }
+  const btn = document.getElementById('submit-btn');
+  btn.textContent = 'Versturen...';
+  btn.disabled = true;
+  // Simulate send (replace with real backend/mailto)
+  setTimeout(() => {
+    document.getElementById('form-content').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+    // Also open WhatsApp with pre-filled message
+    const dienst = document.getElementById('dienst').value;
+    const msg = encodeURIComponent(`Hallo, ik ben ${naam} en ik wil graag een offerte aanvragen${dienst ? ' voor: ' + dienst : ''}.`);
+    // Soft open WhatsApp
+    window.open(`https://api.whatsapp.com/send?phone=31640781931&text=${msg}`, '_blank');
+  }, 1200);
+});
+
+// ── Active nav highlight on scroll
+const sections = document.querySelectorAll('section[id], div[id]');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.id;
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+}, { passive: true });
+</script>
+</body>
+</html>
