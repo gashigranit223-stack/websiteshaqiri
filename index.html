@@ -542,11 +542,11 @@ footer {
             <span class="qc-value">Stuur direct een bericht</span>
           </div>
         </a>
-        <a href="mailto:info@shaqiribouwbedrijf.nl" class="qc-item" aria-label="E-mail ons">
+        <a href="/cdn-cgi/l/email-protection#e38a8d858ca3908b82928a918a818c9694818687918a8985cd8d8f" class="qc-item" aria-label="E-mail ons">
           <div class="qc-icon blue">📧</div>
           <div>
             <span class="qc-label">E-mail</span>
-            <span class="qc-value">info@shaqiribouwbedrijf.nl</span>
+            <span class="qc-value"><span class="__cf_email__" data-cfemail="c4adaaa2ab84b7aca5b5adb6ada6abb1b3a6a1a0b6adaea2eaaaa8">[email&#160;protected]</span></span>
           </div>
         </a>
       </div>
@@ -801,11 +801,11 @@ footer {
               <span class="clink-sub">Reactie binnen 2 uur</span>
             </div>
           </a>
-          <a href="mailto:info@shaqiribouwbedrijf.nl" class="clink" aria-label="E-mail Shaqiri Bouwbedrijf">
+          <a href="/cdn-cgi/l/email-protection#0f666169604f7c676e7e667d666d607a786d6a6b7d666569216163" class="clink" aria-label="E-mail Shaqiri Bouwbedrijf">
             <div class="clink-icon b">📧</div>
             <div>
               <span class="clink-label">E-mail</span>
-              <span class="clink-val">info@shaqiribouwbedrijf.nl</span>
+              <span class="clink-val"><span class="__cf_email__" data-cfemail="a6cfc8c0c9e6d5cec7d7cfd4cfc4c9d3d1c4c3c2d4cfccc088c8ca">[email&#160;protected]</span></span>
               <span class="clink-sub">Reactie binnen 1 werkdag</span>
             </div>
           </a>
@@ -825,7 +825,11 @@ footer {
           <div id="form-content">
             <div class="form-title">Gratis offerte aanvragen</div>
             <div class="form-sub">Vul het formulier in en wij nemen binnen 24 uur contact op.</div>
-            <form id="contact-form" novalidate>
+            <form id="contact-form" name="offerte-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+              <!-- Netlify vereiste hidden fields -->
+              <input type="hidden" name="form-name" value="offerte-aanvraag">
+              <p style="display:none"><input name="bot-field"></p>
+
               <div class="form-row">
                 <div class="form-group">
                   <label for="naam">Uw naam *</label>
@@ -904,7 +908,7 @@ footer {
       <h4>Contact</h4>
       <ul class="footer-links">
         <li><a href="tel:+31640781931">📞 06 40 78 19 31</a></li>
-        <li><a href="mailto:info@shaqiribouwbedrijf.nl">📧 info@shaqiribouwbedrijf.nl</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#5c35323a331c2f343d2d352e353e33292b3e39382e35363a723230">📧 <span class="__cf_email__" data-cfemail="e68f888089a6958e87978f948f84899391848382948f8c80c8888a">[email&#160;protected]</span></a></li>
         <li><a href="https://api.whatsapp.com/send?phone=31640781931" target="_blank" rel="noopener">💬 WhatsApp</a></li>
         <li><a href="https://instagram.com/shaqiri_bouwbedrijf" target="_blank" rel="noopener">📸 Instagram</a></li>
         <li><a href="https://www.marktplaats.nl/smb-profile/profile/24479740" target="_blank" rel="noopener">⭐ Marktplaats reviews</a></li>
@@ -923,7 +927,7 @@ footer {
   <a href="https://api.whatsapp.com/send?phone=31640781931" class="s-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── Nav scroll
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
@@ -992,16 +996,23 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
   const btn = document.getElementById('submit-btn');
   btn.textContent = 'Versturen...';
   btn.disabled = true;
-  // Simulate send (replace with real backend/mailto)
-  setTimeout(() => {
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(new FormData(document.getElementById('contact-form'))).toString()
+  })
+  .then(() => {
     document.getElementById('form-content').style.display = 'none';
     document.getElementById('form-success').style.display = 'block';
-    // Also open WhatsApp with pre-filled message
     const dienst = document.getElementById('dienst').value;
-    const msg = encodeURIComponent(`Hallo, ik ben ${naam} en ik wil graag een offerte aanvragen${dienst ? ' voor: ' + dienst : ''}.`);
-    // Soft open WhatsApp
+    const msg = encodeURIComponent(`Hallo, ik ben ${naam} en ik wil graag een offerte aanvragen${dienst ? ' voor: ' + dienst : ''}. Mijn telefoonnummer is ${tel}.`);
     window.open(`https://api.whatsapp.com/send?phone=31640781931&text=${msg}`, '_blank');
-  }, 1200);
+  })
+  .catch(() => {
+    btn.textContent = 'Verstuur aanvraag →';
+    btn.disabled = false;
+    alert('Er ging iets mis. Bel ons op 06 40 78 19 31 of stuur een WhatsApp.');
+  });
 });
 
 // ── Active nav highlight on scroll
